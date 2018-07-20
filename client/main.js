@@ -147,11 +147,12 @@ Template.tabular.onRendered(function () {
           .bind('keyup change', function (event) {
             if (!table) return;
             if (event.keyCode === 13 || this.value === '') {
-              replaceSearchLabel("Search:");
+              replaceSearchLabel("搜索：");
               table.search(this.value).draw();
+              event.preventDefault();
             }
             else {
-              replaceSearchLabel("Search (hit enter):");
+              replaceSearchLabel("回车后搜索");
             }
           });
       }
@@ -184,7 +185,7 @@ Template.tabular.onRendered(function () {
     var data = Template.currentData();
 
     //console.log('currentData autorun', data);
-    
+
     // if we don't have data OR the selector didn't actually change return out
     if (!data || (data.selector && template.tabular.selector === data.selector)) return;
 

@@ -1,7 +1,7 @@
 /* global Package, Npm */
 
 Package.describe({
-  name: 'aldeed:tabular',
+  name: 'goodideal:tabular',
   summary: 'Datatables for large or small datasets in Meteor',
   version: '2.1.1',
   git: 'https://github.com/aldeed/meteor-tabular.git'
