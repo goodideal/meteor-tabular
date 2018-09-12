@@ -141,12 +141,12 @@ Template.tabular.onRendered(function () {
           $('.dataTables_filter label').contents().filter(function() {
             return this.nodeType === 3 && this.textContent.trim().length;
           }).replaceWith(newText);
-        }
+        };
         $('.dataTables_filter input')
           .unbind()
           .bind('keyup change', function (event) {
             if (!table) return;
-            if (event.keyCode === 13 || this.value === '') {
+            if (event.keyCode === 13) {
               replaceSearchLabel("搜索：");
               table.search(this.value).draw();
               event.preventDefault();
